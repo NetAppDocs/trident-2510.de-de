@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: trident-use/trident-fsx-storageclass-pvc.html 
+keywords: Amazon FSx for NetApp ONTAP, FSx for ONTAP, deploy Trident, integrate Trident, Trident 
+summary: 'Mit Trident und Amazon FSx für NetApp ONTAP können Sie sicherstellen, dass Ihre Kubernetes-Cluster, die im Amazon Elastic Kubernetes Service (EKS) ausgeführt werden, Block- und Datei-Persistent Volumes bereitstellen können, die von ONTAP unterstützt werden.' 
+---
+= Konfigurieren Sie eine StorageClass und einen PVC
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Konfigurieren Sie ein Kubernetes-StorageClass-Objekt und erstellen Sie die Storage-Klasse, um Trident anzuweisen, wie Volumes bereitgestellt werden. Erstellen Sie einen PersistentVolumeClaim (PVC), der die konfigurierte Kubernetes-StorageClass verwendet, um Zugriff auf das PV anzufordern. Anschließend können Sie das PV in einen Pod einbinden.
+
+
+
+== Erstellen Sie eine Speicherklasse
+
+
+
+=== Konfigurieren eines Kubernetes StorageClass Objekts
+
+Das https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass-Objekt"^] Objekt identifiziert Trident als den Provisioner, der für diese Klasse verwendet wird, und weist Trident an, wie ein Volume bereitgestellt werden soll. Verwenden Sie dieses Beispiel, um die Storageclass für Volumes mit NFS einzurichten (siehe unten im Abschnitt Trident Attribute für die vollständige Liste der Attribute):
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+Verwenden Sie dieses Beispiel, um die Storageclass für Volumes mit iSCSI einzurichten:
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-san"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+Um NFSv3-Volumes auf AWS Bottlerocket bereitzustellen, fügen Sie die erforderlichen  `mountOptions` zur Speicherklasse hinzu:
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  media: "ssd"
+  provisioningType: "thin"
+  snapshots: "true"
+mountOptions:
+  - nfsvers=3
+  - nolock
+----
+Siehe link:../trident-reference/objects.html["Kubernetes- und Trident-Objekte"] für Details dazu, wie Storage-Klassen mit dem  `PersistentVolumeClaim` interagieren und Parameter zur Steuerung, wie Trident Volumes bereitstellt.
+
+
+
+=== Erstellen Sie eine Speicherklasse
+
+.Schritte
+. Dies ist ein Kubernetes-Objekt, daher verwenden Sie  `kubectl`, um es in Kubernetes zu erstellen.
++
+[source, console]
+----
+kubectl create -f storage-class-ontapnas.yaml
+----
+. Sie sollten nun eine *basic-csi* Storage-Class sowohl in Kubernetes als auch in Trident sehen, und Trident sollte die Pools im Backend erkannt haben.
++
+[source, console]
+----
+kubectl get sc basic-csi
+----
+
+
+[listing]
+----
+NAME         PROVISIONER             AGE
+basic-csi    csi.trident.netapp.io   15h
+
+----
+
+
+== PVC erstellen
+
+Ein  https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^] (PVC) ist eine Anfrage für den Zugriff auf das PersistentVolume im Cluster.
+
+Die PVC kann so konfiguriert werden, dass sie Speicherplatz einer bestimmten Größe oder eines bestimmten Zugriffsmodus anfordert. Mithilfe der zugehörigen StorageClass kann der Clusteradministrator mehr als nur PersistentVolume-Größe und Zugriffsmodus steuern – zum Beispiel Leistung oder Servicelevel.
+
+Nachdem Sie das PVC erstellt haben, können Sie das Volume in einem Pod einbinden.
+
+
+
+=== Beispielmanifeste
+
+.PersistentVolumeClaim-Beispielmanifeste
+[%collapsible]
+====
+Diese Beispiele zeigen grundlegende PVC-Konfigurationsoptionen.
+
+.PVC mit RWX-Zugriff
+Dieses Beispiel zeigt eine einfache PVC mit RWX-Zugriff, die einer StorageClass namens `basic-csi` zugeordnet ist.
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-storage
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ontap-gold
+----
+.PVC mit iSCSI-Beispiel
+Dieses Beispiel zeigt eine einfache PVC für iSCSI mit RWO-Zugriff, die einer StorageClass namens  `protection-gold` zugeordnet ist.
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: pvc-san
+spec:
+accessModes:
+  - ReadWriteOnce
+resources:
+  requests:
+    storage: 1Gi
+storageClassName: protection-gold
+----
+====
+
+
+=== PVC erstellen
+
+.Schritte
+. Erstellen Sie das PVC.
++
+[source, console]
+----
+kubectl create -f pvc.yaml
+----
+. Überprüfen Sie den PVC-Status.
++
+[source, console]
+----
+kubectl get pvc
+----
+
+
+[listing]
+----
+NAME        STATUS VOLUME     CAPACITY ACCESS MODES STORAGECLASS AGE
+pvc-storage Bound  pv-name 2Gi      RWO                       5m
+----
+Siehe link:../trident-reference/objects.html["Kubernetes- und Trident-Objekte"] für Details dazu, wie Storage-Klassen mit dem  `PersistentVolumeClaim` interagieren und Parameter zur Steuerung, wie Trident Volumes bereitstellt.
+
+
+
+== Trident-Eigenschaften
+
+Diese Parameter legen fest, welche von Trident verwalteten Speicherpools zur Bereitstellung von Volumes eines bestimmten Typs verwendet werden sollen.
+
+[cols=",,,,,"]
+|===
+| Attribut | Typ | Werte | Angebot | Anfrage | Unterstützt von 
+
+
+| Medien^1^ | Zeichenkette | hdd, hybrid, ssd | Pool enthält Medien dieses Typs; hybrid bedeutet beides | Medientyp angegeben | ontap-nas, ontap-nas-economy, ontap-nas-flexgroup, ontap-san, solidfire-san 
+
+
+| provisioningType | Zeichenkette | dünn, dick | Pool unterstützt diese Bereitstellungsmethode | Bereitstellungsmethode angegeben | dick: alle ontap; dünn: alle ontap & solidfire-san 
+
+
+| backendType | Zeichenkette  a| 
+ontap-nas, ontap-nas-economy, ontap-nas-flexgroup, ontap-san, solidfire-san, azure-netapp-files, ontap-san-economy
+| Pool gehört zu dieser Art von Backend | Backend angegeben | Alle Treiber 
+
+
+| Momentaufnahmen | bool | wahr, falsch | Pool unterstützt Volumes mit Snapshots | Volume mit aktivierten Snapshots | ontap-nas, ontap-san, solidfire-san 
+
+
+| Klone | bool | wahr, falsch | Pool unterstützt das Klonen von Volumes | Volume mit aktivierten Klonen | ontap-nas, ontap-san, solidfire-san 
+
+
+| Verschlüsselung | bool | wahr, falsch | Pool unterstützt verschlüsselte Volumes | Volume mit aktivierter Verschlüsselung | ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, ontap-san 
+
+
+| IOPS | int | positive ganze Zahl | Pool ist in der Lage, IOPS in diesem Bereich zu garantieren | Volume garantiert diese IOPS | solidfire-san 
+|===
+^1^: Wird von ONTAP Select-Systemen nicht unterstützt
