@@ -6085,4 +6085,5 @@
   <block id="e8ce47501426b8525633fc30daf17d7a" category="sidebar">Volume-Namen anpassen</block>
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">NFS-Volumes über Namespaces hinweg freigeben</block>
   <block id="62486fa65fc31c383ace8989549632ad" category="sidebar">Snapshots verwenden</block>
+  <block id="f45ace2e96672a5ca55ea6bac48b9865" category="admonition">##Wenn Ihre Anwendung mehrere Namespaces verwendet und diese Namespaces PVCs mit demselben Namen haben, funktionieren Snapshot-Wiederherstellungsvorgänge (sowohl direkt als auch in einen neuen Namespace) nicht korrekt. Alle wiederhergestellten Volumes enthalten dieselben Daten anstatt der korrekten Daten für jeden Namespace. Verwenden Sie die Backup-Wiederherstellung anstelle der Snapshot-Wiederherstellung oder aktualisieren Sie auf Version 26.02 oder höher, die dieses Problem behebt.##</block>
 </blocks>
