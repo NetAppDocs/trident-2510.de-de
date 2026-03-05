@@ -537,7 +537,7 @@ tridentctl-protect create snapshotrestore <my_restore_name> \
 Sie können einen Snapshot jederzeit im ursprünglichen Namensraum wiederherstellen.
 
 
-NOTE: ##Wenn Ihre Anwendung mehrere Namespaces verwendet und diese Namespaces PVCs mit demselben Namen haben, funktionieren Snapshot-Wiederherstellungsvorgänge (sowohl direkt als auch in einen neuen Namespace) nicht korrekt. Alle wiederhergestellten Volumes enthalten dieselben Daten anstatt der korrekten Daten für jeden Namespace. Verwenden Sie die Backup-Wiederherstellung anstelle der Snapshot-Wiederherstellung oder aktualisieren Sie auf Version 26.02 oder höher, die dieses Problem behebt.##
+NOTE: Wenn Ihre Anwendung mehrere Namespaces verwendet und diese Namespaces PVCs mit demselben Namen haben, funktionieren Snapshot-Wiederherstellungsvorgänge (sowohl direkt als auch in einen neuen Namespace) nicht korrekt. Alle wiederhergestellten Volumes haben dieselben Daten anstatt der korrekten Daten für jeden Namespace. Verwenden Sie die Backup-Wiederherstellung anstelle der Snapshot-Wiederherstellung oder aktualisieren Sie auf Version 26.02 oder höher, die dieses Problem behebt.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle länger dauernden s3-Wiederherstellungsvorgänge ausreichend ist. Wenn das Token während des Wiederherstellungsvorgangs abläuft, kann der Vorgang fehlschlagen.
