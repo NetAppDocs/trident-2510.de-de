@@ -21,7 +21,7 @@ Sie können Trident mithilfe des Trident-Operators entweder manuell oder mit Hel
 Sie können von einer Trident-Operatorinstallation mit Clusterumfang auf eine andere Trident-Operatorinstallation mit Clusterumfang aktualisieren. Alle Trident Versionen verwenden einen Operator mit Clusterumfang.
 
 
-NOTE: Um von Trident, das mit dem Namespace-Scoped-Operator installiert wurde (Versionen 20.07 bis 20.10), zu aktualisieren, verwenden Sie die Upgrade-Anweisungen für link:../earlier-versions.html["Ihre installierte Version"] von Trident.
+NOTE: Um von Trident, das mit dem Namespace-Scoped-Operator installiert wurde (Versionen 20.07 bis 20.10), zu aktualisieren, verwenden Sie die Upgrade-Anweisungen für Ihre installierte Version von Trident.
 
 .Über diese Aufgabe
 Trident stellt eine Bundle-Datei bereit, die Sie verwenden können, um den Operator zu installieren und zugehörige Objekte für Ihre Kubernetes-Version zu erstellen.

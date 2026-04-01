@@ -38,7 +38,7 @@ Beachten Sie beim Upgrade auf die neueste Version von Trident Folgendes:
 Trident-Versionen folgen einer datumsbasierten `YY.MM` Namenskonvention, wobei „YY“ die letzten beiden Ziffern des Jahres und „MM“ der Monat sind. Dot-Releases folgen einer `YY.MM.X` Konvention, wobei „X“ das Patch-Level ist. Sie wählen die Version aus, auf die Sie aktualisieren möchten, basierend auf der Version, von der Sie aktualisieren.
 
 * Sie können ein direktes Upgrade auf jede Zielversion durchführen, die innerhalb eines Vier-Versions-Fensters Ihrer installierten Version liegt. Beispielsweise können Sie direkt von 24.06 (oder jeder 24.06 dot release) auf 25.06 aktualisieren.
-* Wenn Sie von einer Version außerhalb des Vier-Versions-Fensters aktualisieren, führen Sie ein mehrstufiges Upgrade durch. Verwenden Sie die Upgrade-Anweisungen für die link:../earlier-versions.html["frühere Version"] Version, von der Sie aktualisieren, um auf die neueste Version zu aktualisieren, die in das Vier-Versions-Fenster passt. Wenn Sie beispielsweise Version 23.07 verwenden und auf 25.06 aktualisieren möchten:
+* Wenn Sie von einer Version außerhalb des Vier-Versions-Fensters aktualisieren, führen Sie ein mehrstufiges Upgrade durch. Verwenden Sie die Upgrade-Anweisungen für die frühere Version, von der Sie aktualisieren, um auf die neueste Version innerhalb des Vier-Versions-Fensters zu aktualisieren. Wenn Sie beispielsweise Version 23.07 verwenden und auf 25.06 aktualisieren möchten:
 +
 .. Erstes Upgrade von 23.07 auf 24.06.
 .. Führen Sie dann ein Upgrade von 24.06 auf 25.06 durch.

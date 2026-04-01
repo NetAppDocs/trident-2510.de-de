@@ -33,7 +33,7 @@ Selbsthilfe:: Die Trident-Dokumentation ist für die Monate 25 bis 36 ab dem Ver
 
 
  a| 
-link:https://docs.netapp.com/us-en/trident/index.html["25,10"^]
+link:https://docs.netapp.com/us-en/trident-2510/index.html["25,10"^]
 | Oktober 2026 | Oktober 2027 | Oktober 2028 
 
 

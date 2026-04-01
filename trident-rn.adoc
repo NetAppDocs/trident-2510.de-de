@@ -888,7 +888,7 @@ Ein neuer link:https://docs.netapp.com/us-en/trident/trident-reference/pod-secur
 
 == Änderungen in 22.04
 
-NetApp verbessert und erweitert seine Produkte und Dienstleistungen kontinuierlich. Hier sind einige der neuesten Funktionen in Trident. Informationen zu früheren Versionen finden Sie unter  https://docs.netapp.com/us-en/trident/earlier-versions.html["Frühere Versionen der Dokumentation"].
+NetApp verbessert und erweitert seine Produkte und Services kontinuierlich. Hier sind einige der neuesten Funktionen in Trident. Informationen zu früheren Versionen finden Sie in der Dokumentation.
 
 
 IMPORTANT: Wenn Sie von einer früheren Trident-Version aktualisieren und Azure NetApp Files verwenden, ist der ``location`` Konfigurationsparameter nun ein obligatorisches Singleton-Feld.
