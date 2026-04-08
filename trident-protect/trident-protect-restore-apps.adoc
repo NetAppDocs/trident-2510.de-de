@@ -332,8 +332,11 @@ Durch Ausführen dieses Befehls werden die verfügbaren Backups im AppVault ange
 | production1 | wordpress | backup | wordpress-bkup-2| 2024-10-30 08:37:40 (UTC)| backuppath2 |
 +-------------+-----------+--------+-----------------+--------------------------+-------------+
 ----
-. Stellen Sie die Anwendung auf dem Ziel-Cluster mithilfe des AppVault-Namens und des Archivpfads wieder her: HINWEIS: Bei Verwendung eines CR muss sichergestellt werden, dass der für die Anwendungswiederherstellung vorgesehene Namespace auf dem Ziel-Cluster existiert.
+. Stellen Sie die Anwendung im Ziel-Cluster mithilfe des AppVault-Namens und des Archivpfads wieder her:
 
+
+
+NOTE: Bei Verwendung eines CR muss sichergestellt werden, dass der für die Anwendungswiederherstellung vorgesehene Namespace auf dem Ziel-Cluster existiert.
 
 [role="tabbed-block"]
 ====
