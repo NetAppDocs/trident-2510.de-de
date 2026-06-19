@@ -43,7 +43,7 @@ NOTE: Stellen Sie sicher, dass Sie die für Amazon Linux und Ubuntu https://docs
 +
 ** SMB-Volumes werden nur mit dem  `ontap-nas` Treiber unterstützt.
 ** SMB-Volumes werden mit dem Trident EKS-Add-on nicht unterstützt.
-** Trident unterstützt SMB-Volumes nur, wenn sie in Pods eingebunden sind, die auf Windows-Knoten ausgeführt werden. Weitere Informationen finden Sie unter link:../trident-use/trident-fsx-storage-backend.html#prepare-to-provision-smb-volumes["Bereiten Sie die Bereitstellung von SMB-Volumes vor"].
+** Trident unterstützt SMB-Volumes nur, wenn sie in Pods eingebunden sind, die auf Windows-Knoten ausgeführt werden. Siehe link:../trident-use/worker-node-prep.html#prepare-to-provision-smb-volumes["Bereiten Sie die Bereitstellung von SMB-Volumes vor"] für Details.
 
 
 * Vor Trident 24.02 konnten Volumes, die auf Amazon FSx-Dateisystemen mit aktivierten automatischen Backups erstellt wurden, nicht von Trident gelöscht werden. Um dieses Problem in Trident 24.02 oder höher zu verhindern, geben Sie die  `fsxFilesystemID`, AWS `apiRegion`, AWS `apikey` und AWS `secretKey` in der Backend-Konfigurationsdatei für AWS FSx for ONTAP an.

@@ -28,9 +28,9 @@ indexpage:
   - title: Trident bereitstellen
     links:
     - title: Bereitstellung mit dem Trident Operator
-      url: "/trident-get-started/kubernetes-deploy-operator.html"
+      url: "/trident-install/kubernetes-deploy-operator.html"
     - title: Mit tridentctl bereitstellen
-      url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+      url: "/trident-install/kubernetes-deploy-tridentctl.html"
     - title: Trident für Docker bereitstellen
       url: "/trident-docker/deploy-docker.html"
   - title: Trident aktualisieren

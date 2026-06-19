@@ -12,7 +12,7 @@ summary: Wenn Sie gerade erst mit Kubernetes beginnen, verwenden Sie die Anweisu
 
 
 [role="lead"]
-Sie können Trident installieren und in wenigen Schritten mit der Verwaltung von Speicherressourcen beginnen. Bevor Sie beginnen, lesen Sie link:requirements.html["Trident-Anforderungen"].
+Sie können Trident installieren und in wenigen Schritten mit der Verwaltung von Speicherressourcen beginnen. Bevor Sie beginnen, lesen Sie link:../trident-get-started/requirements.html["Trident-Anforderungen"].
 
 
 NOTE: Für Docker siehe link:../trident-docker/deploy-docker.html["Trident für Docker"].
@@ -29,7 +29,7 @@ link:../trident-use/worker-node-prep.html["Bereiten Sie den Worker-Knoten vor"]
 Trident bietet mehrere Installationsmethoden und -modi, die für eine Vielzahl von Umgebungen und Organisationen optimiert sind.
 
 [role="quick-margin-para"]
-link:../trident-get-started/kubernetes-deploy.html["Trident installieren"]
+link:../trident-install/kubernetes-deploy.html["Trident installieren"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"] Erstelle ein Backend
 [role="quick-margin-para"]

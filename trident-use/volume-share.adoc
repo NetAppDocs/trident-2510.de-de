@@ -170,6 +170,5 @@ Flags:
 
 Um mehr über den Volume-Zugriff über Namespaces hinweg zu erfahren:
 
-* Besuchen Sie link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["Gemeinsame Nutzung von Volumes zwischen Namespaces: Sagen Sie Hallo zum namespace-übergreifenden Volume-Zugriff"^].
 * Sehen Sie sich die Demo auf link:https://media.netapp.com/page/9071d19d-1438-5ed3-a7aa-ea4d73c28b7f/solutions-products["NetAppTV"^] an.
 

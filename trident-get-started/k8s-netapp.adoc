@@ -33,7 +33,7 @@ NOTE: Trident unterstützt alle oben genannten ONTAP Deployment-Modelle.
 
 == Cloud Volumes ONTAP
 
-http://cloud.netapp.com/ontap-cloud?utm_source=GitHub&utm_campaign=Trident["Cloud Volumes ONTAP"^] ist eine rein softwarebasierte Storage-Appliance, die die ONTAP Datenmanagement-Software in der Cloud ausführt. Sie können Cloud Volumes ONTAP für Produktionsworkloads, Disaster Recovery, DevOps, Dateifreigaben und Datenbankmanagement verwenden. Es erweitert Unternehmensspeicher in die Cloud, indem es Speichereffizienz, Hochverfügbarkeit, Datenreplizierung, Daten-Tiering und Anwendungskonsistenz bietet.
+Cloud Volumes ONTAP ist eine rein softwarebasierte Storage-Appliance, die die ONTAP Datenverwaltungssoftware in der Cloud ausführt. Cloud Volumes ONTAP kann für Produktions-Workloads, Notfallwiederherstellung, DevOps, Dateifreigaben und Datenbankverwaltung verwendet werden. Die Lösung erweitert Unternehmensspeicher in die Cloud, indem sie Speichereffizienz, Hochverfügbarkeit, Datenreplizierung, Daten-Tiering und Anwendungskonsistenz bietet.
 
 
 
@@ -65,4 +65,4 @@ https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] ist ei
 
 == Google Cloud NetApp Volumes
 
-https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=GitHub&utm_campaign=Trident["Google Cloud NetApp Volumes"^] ist ein Cloud-nativer Dateidienst, der NAS-Volumes über NFS mit All-Flash-Performance bereitstellt. Dieser Dienst ermöglicht die Ausführung beliebiger Workloads, einschließlich Legacy-Anwendungen, in der GCP Cloud. Er bietet einen vollständig verwalteten Dienst, der konstante hohe Leistung, sofortiges Klonen, Datenschutz und sicheren Zugriff auf Google Compute Engine (GCE)-Instanzen bietet.
+https://www.netapp.com/google-cloud/netapp-volumes/["Google Cloud NetApp Volumes"^]ist ein nativer Cloud-Dateidienst, der NAS-Volumes über NFS mit All-Flash-Performance bereitstellt. Dieser Dienst ermöglicht die Ausführung beliebiger Workloads, einschließlich Legacy-Anwendungen, in der GCP Cloud. Er bietet einen vollständig verwalteten Dienst, der konstant hohe Leistung, sofortiges Klonen, Datenschutz und sicheren Zugriff auf Google Compute Engine (GCE) Instanzen bietet.
