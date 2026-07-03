@@ -20,7 +20,7 @@ Bevor Sie Ihr Azure NetApp Files-Backend konfigurieren können, müssen Sie sich
 
 Wenn Sie Azure NetApp Files zum ersten Mal oder an einem neuen Standort verwenden, ist eine anfängliche Konfiguration erforderlich, um Azure NetApp Files einzurichten und ein NFS-Volume zu erstellen. Siehe  https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files einrichten und ein NFS-Volume erstellen"^].
 
-Um ein  https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] Backend zu konfigurieren und zu verwenden, benötigen Sie Folgendes:
+Um ein  https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Files"^] Backend zu konfigurieren und zu verwenden, benötigen Sie Folgendes:
 
 [NOTE]
 ====
