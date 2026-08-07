@@ -23,12 +23,14 @@ NOTE: Stellen Sie sicher, dass die AppVault CR auf dem Cluster vorhanden ist, au
 
 
 
+[[configure-appvault-authentication-and-passwords]]
 == Konfigurieren Sie die AppVault-Authentifizierung und Passwörter
 
 Bevor Sie ein AppVault CR erstellen, stellen Sie sicher, dass der AppVault und der von Ihnen gewählte Datenmover sich beim Anbieter und allen zugehörigen Ressourcen authentifizieren können.
 
 
 
+[[data-mover-repository-passwords]]
 === Passwörter für das Data mover-Repository
 
 Wenn Sie AppVault-Objekte mit CRs oder dem Trident Protect CLI-Plugin erstellen, können Sie ein Kubernetes-Secret mit benutzerdefinierten Passwörtern für die Restic- und Kopia-Verschlüsselung angeben. Wenn Sie kein Secret angeben, verwendet Trident Protect ein Standardpasswort.
@@ -81,6 +83,7 @@ kubectl create secret generic my-optional-data-mover-secret \
 ====
 
 
+[[s3-compatible-storage-iam-permissions]]
 === S3-kompatible Speicher-IAM-Berechtigungen
 
 Wenn Sie auf S3-kompatiblen Speicher wie Amazon S3, Generic S3, https://docs.netapp.com/us-en/storagegrid/s3/index.html["StorageGrid S3"^], oder https://docs.netapp.com/us-en/ontap/s3-config/["ONTAP S3"^] mit Trident Protect zugreifen, müssen Sie sicherstellen, dass die von Ihnen bereitgestellten Benutzeranmeldeinformationen über die erforderlichen Berechtigungen für den Zugriff auf den Bucket verfügen. Im Folgenden finden Sie ein Beispiel für eine Richtlinie, die die minimal erforderlichen Berechtigungen für den Zugriff mit Trident Protect gewährt. Sie können diese Richtlinie auf den Benutzer anwenden, der die S3-kompatiblen Bucket-Richtlinien verwaltet.
@@ -107,6 +110,7 @@ Weitere Informationen zu Amazon S3-Richtlinien finden Sie in den Beispielen im h
 
 
 
+[[eks-pod-identity-for-amazon-s3-aws-authentication]]
 === EKS Pod Identity für Amazon S3 (AWS) Authentifizierung
 
 Trident Protect unterstützt EKS Pod Identity für Kopia data mover-Operationen. Diese Funktion ermöglicht sicheren Zugriff auf S3-Buckets, ohne AWS-Anmeldeinformationen in Kubernetes-Secrets speichern zu müssen.
@@ -148,6 +152,7 @@ spec:
 ----
 
 
+[[appvault-key-generation-examples-for-cloud-providers]]
 === AppVault Schlüsselgenerierungsbeispiele für Cloud-Anbieter
 
 Beim Definieren eines AppVault CR müssen Sie Anmeldeinformationen angeben, um auf die vom Anbieter gehosteten Ressourcen zuzugreifen, es sei denn, Sie verwenden IAM-Authentifizierung. Wie Sie die Schlüssel für die Anmeldeinformationen generieren, hängt vom jeweiligen Anbieter ab. Im Folgenden finden Sie Beispiele für die Schlüsselgenerierung über die Befehlszeile für verschiedene Anbieter. Sie können die folgenden Beispiele verwenden, um Schlüssel für die Anmeldeinformationen jedes Cloud-Anbieters zu erstellen.
@@ -215,12 +220,14 @@ kubectl create secret generic <secret-name> \
 ====
 
 
+[[appvault-creation-examples]]
 == AppVault-Erstellungsbeispiele
 
 Die folgenden sind Beispiel-AppVault-Definitionen für jeden Anbieter.
 
 
 
+[[appvault-cr-examples]]
 === AppVault CR-Beispiele
 
 Anhand der folgenden CR-Beispiele können Sie AppVault-Objekte für jeden Cloud-Anbieter erstellen.
@@ -404,6 +411,7 @@ spec:
 ====
 
 
+[[appvault-creation-examples-using-the-trident-protect-cli]]
 === AppVault Erstellungsbeispiele mit der Trident Protect CLI
 
 Sie können die folgenden CLI-Befehlsbeispiele verwenden, um AppVault CRs für jeden Anbieter zu erstellen.
@@ -493,6 +501,7 @@ tridentctl-protect create vault StorageGridS3 <vault-name> \
 ====
 
 
+[[supported-providerconfig-s3-configuration-options]]
 === Unterstützte `providerConfig.s3` Konfigurationsoptionen
 
 Siehe die folgende Tabelle für die S3-Provider-Konfigurationsoptionen:
@@ -518,6 +527,7 @@ Siehe die folgende Tabelle für die S3-Provider-Konfigurationsoptionen:
 |===
 
 
+[[view-appvault-information]]
 == Informationen zu AppVault anzeigen
 
 Sie können das Trident Protect CLI-Plugin verwenden, um Informationen über AppVault-Objekte anzuzeigen, die Sie auf dem Cluster erstellt haben.
@@ -559,6 +569,7 @@ Der Clustername in der ersten Spalte der Tabelle ist nur verfügbar, wenn bei de
 
 
 
+[[remove-an-appvault]]
 == Entfernen Sie ein AppVault
 
 Sie können ein AppVault-Objekt jederzeit entfernen.

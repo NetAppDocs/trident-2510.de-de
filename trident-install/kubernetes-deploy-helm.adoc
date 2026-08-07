@@ -16,6 +16,7 @@ Sie können den Trident-Operator bereitstellen und Trident mithilfe von Helm ins
 
 
 
+[[critical-information-about-trident-25-10]]
 == Wichtige Informationen zu Trident 25.10
 
 *Sie müssen die folgenden wichtigen Informationen über Trident lesen.*
@@ -36,6 +37,7 @@ Die Verwendung einer Konfiguration ohne Multipathing oder die Verwendung von  `f
 ====
 
 
+[[deploy-the-trident-operator-and-install-trident-using-helm]]
 == Den Trident-Operator bereitstellen und Trident mit Helm installieren
 
 Mit dem Trident link:https://artifacthub.io/packages/helm/netapp-trident/trident-operator["Helm Chart"^] können Sie den Trident Operator bereitstellen und Trident in einem Schritt installieren.
@@ -43,7 +45,7 @@ Mit dem Trident link:https://artifacthub.io/packages/helm/netapp-trident/trident
 Überprüfen Sie link:../trident-install/kubernetes-deploy.html["die Installationsübersicht"], um sicherzustellen, dass Sie die Installationsvoraussetzungen erfüllt und die richtige Installationsoption für Ihre Umgebung ausgewählt haben.
 
 .Bevor Sie beginnen
-Zusätzlich zu dem link:../trident-install/kubernetes-deploy.html#before-you-deploy["Bereitstellungsvoraussetzungen"] benötigen Sie link:https://v3.helm.sh/["Helm Version 3"^].
+Zusätzlich zu dem link:kubernetes-deploy.html#before-you-begin["Bereitstellungsvoraussetzungen"] benötigen Sie link:https://v3.helm.sh/["Helm Version 3"^].
 
 .Schritte
 . Fügen Sie das Trident Helm repository hinzu:
@@ -68,6 +70,7 @@ Sie können  `helm list` verwenden, um Installationsdetails wie Name, Namespace,
 
 
 
+[[pass-configuration-data-during-install]]
 == Konfigurationsdaten während der Installation übergeben
 
 Es gibt zwei Möglichkeiten, Konfigurationsdaten während der Installation zu übergeben:
@@ -94,6 +97,7 @@ helm install <name> netapp-trident/trident-operator --version 100.2506.0  --crea
 ----
 
 
+[[configuration-options]]
 == Konfigurationsoptionen
 
 Diese Tabelle und die  `values.yaml` Datei, die Teil des Helm-Charts ist, enthalten die Liste der Schlüssel und ihrer Standardwerte.
@@ -380,6 +384,7 @@ Aktiviert die Host-Netzwerkverbindung für den Trident Controller. Dies ist nüt
 |===
 
 
+[[understanding-controller-pods-and-node-pods]]
 === Controller-Pods und Node-Pods verstehen
 
 Trident läuft als einzelner Controller-Pod sowie als Node-Pod auf jedem Worker-Knoten im Cluster. Der Node-Pod muss auf jedem Host ausgeführt werden, auf dem Sie möglicherweise ein Trident Volume einbinden möchten.

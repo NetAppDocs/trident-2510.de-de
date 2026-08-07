@@ -18,6 +18,7 @@ Mit Trident Protect können Sie die asynchronen Replizierungsfunktionen der NetA
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Namespace-Annotationen und -Labels während Wiederherstellungs- und Failover-Operationen
 
 Während Wiederherstellungs- und Failover-Vorgängen werden die Labels und Annotationen im Ziel-Namensraum so angepasst, dass sie den Labels und Annotationen im Quell-Namensraum entsprechen. Labels oder Annotationen aus dem Quell-Namensraum, die im Ziel-Namensraum nicht existieren, werden hinzugefügt, und alle Labels oder Annotationen, die bereits vorhanden sind, werden überschrieben, um dem Wert aus dem Quell-Namensraum zu entsprechen. Labels oder Annotationen, die nur im Ziel-Namensraum existieren, bleiben unverändert.
@@ -40,6 +41,7 @@ Wenn Sie die Quellanwendung mit Helm mit dem  `--create-namespace` Flag installi
 
 
 
+[[example]]
 === Beispiel
 
 Das folgende Beispiel zeigt einen Quell- und einen Ziel-Namensraum mit jeweils unterschiedlichen Annotationen und Labels. Sie können den Zustand des Ziel-Namensraums vor und nach der Operation sehen und erkennen, wie die Annotationen und Labels im Ziel-Namensraum kombiniert oder überschrieben werden.
@@ -105,6 +107,7 @@ NOTE: Sie können Trident Protect so konfigurieren, dass Dateisysteme während D
 
 
 
+[[execution-hooks-during-failover-and-reverse-operations]]
 == Ausführungshooks während Failover- und Reverse-Operationen
 
 Wenn Sie eine AppMirror-Beziehung zum Schutz Ihrer Anwendung verwenden, gibt es bestimmte Verhaltensweisen im Zusammenhang mit Ausführungs-Hooks, die Sie während Failover- und Rückwärtsoperationen beachten sollten.
@@ -117,6 +120,7 @@ Weitere Informationen zu Execution Hooks finden Sie unter link:../trident-protec
 
 
 
+[[set-up-a-replication-relationship]]
 == Eine Replikationsbeziehung einrichten
 
 Die Einrichtung einer Replikationsbeziehung umfasst Folgendes:
@@ -452,6 +456,7 @@ kubectl get amr -n my-app-namespace <relationship name> -o=jsonpath='{.status}' 
 
 
 
+[[fail-over-to-destination-cluster]]
 === Failover zum Ziel-Cluster
 
 Mit Trident Protect können Sie replizierte Anwendungen auf einen Ziel-Cluster umschalten. Dieses Verfahren stoppt die Replikationsbeziehung und bringt die Anwendung im Ziel-Cluster online. Trident Protect stoppt die Anwendung im Quell-Cluster nicht, wenn sie dort betriebsbereit war.
@@ -476,6 +481,7 @@ kubectl get amr -n my-app-namespace <relationship name> -o=jsonpath='{.status}' 
 
 
 
+[[resync-a-failed-over-replication-relationship]]
 === Eine fehlgeschlagene Replikationsbeziehung erneut synchronisieren
 
 Der Resynchronisierungsvorgang stellt die Replikationsbeziehung wieder her. Nach der Durchführung eines Resynchronisierungsvorgangs wird die ursprüngliche Quellanwendung zur aktiven Anwendung und alle Änderungen, die an der aktiven Anwendung im Ziel-Cluster vorgenommen wurden, werden verworfen.
@@ -500,6 +506,7 @@ kubectl apply -f trident-protect-relationship.yaml -n my-app-namespace
 
 
 
+[[reverse-resync-a-failed-over-replication-relationship]]
 === Reverse resync einer fehlgeschlagenen Replikationsbeziehung
 
 Wenn Sie eine fehlgeschlagene Replikationsbeziehung rücksynchronisieren, wird die Zielanwendung zur Quellanwendung und die Quellanwendung zur Zielanwendung. Änderungen, die während des Failovers an der Zielanwendung vorgenommen wurden, bleiben erhalten.
@@ -513,6 +520,7 @@ Wenn Sie eine fehlgeschlagene Replikationsbeziehung rücksynchronisieren, wird d
 
 
 
+[[reverse-application-replication-direction]]
 == Replikationsrichtung der Anwendung umkehren
 
 Wenn Sie die Replikationsrichtung umkehren, verschiebt Trident Protect die Anwendung zum Ziel-Storage-Backend und repliziert gleichzeitig weiterhin zurück zum ursprünglichen Quell-Storage-Backend. Trident Protect stoppt die Quellanwendung und repliziert die Daten zum Ziel, bevor auf die Zielanwendung umgeschaltet wird.
@@ -599,6 +607,7 @@ NOTE: Fügen Sie in Schritt 2 des Failover-Verfahrens das  `spec.promotedSnapsho
 
 
 
+[[result]]
 === Ergebnis
 
 Die folgenden Aktionen erfolgen aufgrund der umgekehrten Replikation:
@@ -613,6 +622,7 @@ Die folgenden Aktionen erfolgen aufgrund der umgekehrten Replikation:
 
 
 
+[[fail-back-applications-to-the-original-source-cluster]]
 === Failback von Applikationen auf den ursprünglichen Quell-Cluster
 
 Mit Trident Protect können Sie „Failback“ nach einem Failover-Vorgang durchführen, indem Sie die folgende Abfolge von Schritten ausführen. In diesem Workflow zur Wiederherstellung der ursprünglichen Replikationsrichtung repliziert (resynchronisiert) Trident Protect alle Anwendungsänderungen zurück in die ursprüngliche Quellanwendung, bevor die Replikationsrichtung umgekehrt wird.
@@ -635,6 +645,7 @@ CAUTION: Führen Sie keine normale Resynchronisierungsoperation durch, da dadurc
 
 
 
+[[delete-a-replication-relationship]]
 === Eine Replikationsbeziehung löschen
 
 Sie können eine Replikationsbeziehung jederzeit löschen. Wenn Sie die Replikationsbeziehung der Anwendung löschen, entstehen zwei separate Anwendungen ohne Beziehung zueinander.

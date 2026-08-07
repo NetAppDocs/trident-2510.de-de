@@ -16,6 +16,7 @@ Mehrere Trident-Instanzen sind erforderlich, wenn Sie mehrere Speicherkonfigurat
 
 
 
+[[steps-for-docker-managed-plugin-version-1-1317-03-or-later]]
 == Schritte für das Docker-verwaltete Plugin (Version 1.13/17.03 oder später)
 
 . Starten Sie die erste Instanz unter Angabe eines Alias und einer Konfigurationsdatei.
@@ -51,6 +52,7 @@ docker volume create -d silver --name ntapSilver
 
 
 
+[[steps-for-traditional-version-1-12-or-earlier]]
 == Schritte für traditionelle (Version 1.12 oder älter)
 
 . Starten Sie das Plugin mit einer NFS-Konfiguration unter Verwendung einer benutzerdefinierten Treiber-ID:

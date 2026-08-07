@@ -16,6 +16,7 @@ Erfahren Sie mehr über Backend-Konfigurationsoptionen für Amazon FSx for NetAp
 
 
 
+[[backend-configuration-options]]
 == Backend-Konfigurationsoptionen
 
 Siehe die folgende Tabelle für die Backend-Konfigurationsoptionen:
@@ -108,6 +109,7 @@ Siehe die folgende Tabelle für die Backend-Konfigurationsoptionen:
 |===
 
 
+[[update-datalif-after-initial-configuration]]
 === Aktualisieren `dataLIF` nach der Erstkonfiguration
 
 Sie können die dataLIF nach der Erstkonfiguration ändern, indem Sie den folgenden Befehl ausführen, um die neue Backend-JSON-Datei mit der aktualisierten dataLIF bereitzustellen.
@@ -121,6 +123,7 @@ NOTE: Wenn PVCs an einem oder mehreren Pods angeschlossen sind, müssen Sie alle
 
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == Backend-Konfigurationsoptionen für die Bereitstellung von Volumes
 
 Sie können die Standardbereitstellung mithilfe dieser Optionen im  `defaults` Abschnitt der Konfiguration steuern. Ein Beispiel finden Sie in den unten stehenden Konfigurationsbeispielen.
@@ -154,7 +157,7 @@ Sie können die Standardbereitstellung mithilfe dieser Optionen im  `defaults` A
 | `encryption` | Aktivieren Sie NetApp Volume Encryption (NVE) auf dem neuen Volume; Standard ist  `false`. NVE muss auf dem Cluster lizenziert und aktiviert sein, um diese Option zu verwenden. Wenn NAE im Backend aktiviert ist, wird jedes in Trident bereitgestellte Volume NAE-aktiviert. Weitere Informationen finden Sie unter: link:../trident-reco/security-reco.html["Wie Trident mit NVE und NAE zusammenarbeitet"]. | `false` 
 
 
-| `luksEncryption` | Aktivieren Sie die LUKS-Verschlüsselung. Siehe link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["Verwenden Sie Linux Unified Key Setup (LUKS)"]. Nur SAN. | "" 
+| `luksEncryption` | LUKS-Verschlüsselung aktivieren. Siehe link:../trident-reco/security-luks.html["Verwenden Sie Linux Unified Key Setup (LUKS)"]. Nur SAN. | "" 
 
 
 | `tieringPolicy` | zu verwendende Tiering-Richtlinie	`none` |  
@@ -167,6 +170,7 @@ Sie können die Standardbereitstellung mithilfe dieser Optionen im  `defaults` A
 |===
 
 
+[[example-configurations]]
 == Beispielkonfigurationen
 
 .Konfiguration der Speicherklasse für SMB-Volumes

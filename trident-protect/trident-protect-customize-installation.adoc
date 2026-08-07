@@ -16,6 +16,7 @@ Sie können die Standardkonfiguration von Trident Protect an die spezifischen An
 
 
 
+[[specify-trident-protect-container-resource-limits]]
 == Geben Sie die Ressourcenbeschränkungen für den Trident Protect-Container an.
 
 Sie können eine Konfigurationsdatei verwenden, um Ressourcenlimits für Trident Protect-Container festzulegen, nachdem Sie Trident Protect installiert haben. Durch das Festlegen von Ressourcenlimits können Sie steuern, wie viele Ressourcen des Clusters von Trident Protect-Operationen verbraucht werden.
@@ -87,6 +88,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
 
 
 
+[[customize-security-context-constraints]]
 == Sicherheitskontextbeschränkungen anpassen
 
 Sie können eine Konfigurationsdatei verwenden, um die OpenShift Security Context Constraint (SCCs) für Trident Protect-Container nach der Installation von Trident Protect zu ändern. Diese Beschränkungen definieren Sicherheitsvorgaben für Pods in einem Red Hat OpenShift Cluster.
@@ -134,6 +136,7 @@ Dadurch werden die Standardwerte durch die in der  `sccconfig.yaml` Datei angege
 
 
 
+[[configure-additional-trident-protect-helm-chart-settings]]
 == Konfigurieren Sie zusätzliche Trident Protect Helm-Chart-Einstellungen
 
 Sie können die AutoSupport-Einstellungen und die Namensraumfilterung an Ihre spezifischen Anforderungen anpassen. Die folgende Tabelle beschreibt die verfügbaren Konfigurationsparameter:
@@ -204,6 +207,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
 ====
 
 
+[[restrict-trident-protect-pods-to-specific-nodes]]
 == Trident Protect-Pods auf bestimmte Knoten beschränken
 
 Sie können die Kubernetes nodeSelector Knotenauswahlbeschränkung verwenden, um anhand von Knotenbezeichnungen zu steuern, welche Ihrer Knoten berechtigt sind, Trident Protect-Pods auszuführen. Standardmäßig ist Trident Protect auf Knoten beschränkt, auf denen Linux ausgeführt wird. Sie können diese Beschränkungen je nach Bedarf weiter anpassen.

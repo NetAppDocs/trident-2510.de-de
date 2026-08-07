@@ -16,6 +16,7 @@ Konfigurieren Sie ein Kubernetes StorageClass-Objekt und erstellen Sie die Speic
 
 
 
+[[configure-a-kubernetes-storageclass-object]]
 == Konfigurieren eines Kubernetes StorageClass Objekts
 
 Das  https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass-Objekt"^] identifiziert Trident als den Provisioner, der für diese Klasse verwendet wird, und weist Trident an, wie ein Volume bereitgestellt werden soll. Zum Beispiel:
@@ -40,6 +41,7 @@ Siehe link:../trident-reference/objects.html["Kubernetes- und Trident-Objekte"] 
 
 
 
+[[create-a-storage-class]]
 == Erstellen Sie eine Speicherklasse
 
 Nachdem Sie das StorageClass-Objekt erstellt haben, können Sie die Speicherklasse erstellen. <<Storage-Class-Beispiele>> bietet einige grundlegende Beispiele, die Sie verwenden oder anpassen können.
@@ -96,6 +98,7 @@ basic-csi    csi.trident.netapp.io   15h
 ----
 
 
+[[storage-class-samples]]
 === Storage-Class-Beispiele
 
 Trident bietet https://github.com/NetApp/trident/tree/master/trident-installer/sample-input/storage-class-samples["einfache Speicherklassendefinitionen für spezifische Backends"^].

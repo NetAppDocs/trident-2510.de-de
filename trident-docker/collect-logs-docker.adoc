@@ -16,6 +16,7 @@ Sie können Protokolle zur Unterstützung bei der Fehlerbehebung sammeln. Die Me
 
 
 
+[[collect-logs-for-troubleshooting]]
 == Sammeln Sie Protokolle zur Fehlerbehebung
 
 .Schritte
@@ -64,6 +65,7 @@ docker plugin enable <plugin>
 
 
 
+[[general-troubleshooting-tips]]
 == Allgemeine Tipps zur Fehlerbehebung
 
 * Das häufigste Problem, auf das neue Benutzer stoßen, ist eine Fehlkonfiguration, die die Initialisierung des Plugins verhindert. Wenn dies geschieht, wird beim Versuch, das Plugin zu installieren oder zu aktivieren, wahrscheinlich eine Meldung wie diese angezeigt:

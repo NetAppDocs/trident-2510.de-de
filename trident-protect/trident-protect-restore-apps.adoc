@@ -26,6 +26,7 @@ Mit Trident Protect können Sie Ihre Anwendung aus einem Snapshot oder einer Sic
 ====
 
 
+[[restore-from-a-backup-to-a-different-namespace]]
 == Wiederherstellung aus einem Backup in einen anderen Namensraum
 
 Wenn Sie eine Sicherung mithilfe einer BackupRestore CR in einem anderen Namespace wiederherstellen, stellt Trident Protect die Anwendung in einem neuen Namespace wieder her und erstellt eine Anwendungs-CR für die wiederhergestellte Anwendung. Um die wiederhergestellte Anwendung zu schützen, erstellen Sie bedarfsgesteuerte Sicherungen oder Snapshots oder legen Sie einen Schutzzeitplan fest.
@@ -152,6 +153,7 @@ tridentctl-protect create backuprestore <my_restore_name> \
 ====
 
 
+[[restore-from-a-backup-to-the-original-namespace]]
 == Stellen Sie aus einer Sicherung in den ursprünglichen Namensraum wieder her
 
 Sie können ein Backup jederzeit im ursprünglichen Namespace wiederherstellen.
@@ -271,6 +273,7 @@ tridentctl-protect create backupinplacerestore <my_restore_name> \
 ====
 
 
+[[restore-from-a-backup-to-a-different-cluster]]
 == Wiederherstellung aus einem Backup auf einem anderen Cluster
 
 Sie können ein Backup auf einem anderen Cluster wiederherstellen, wenn es ein Problem mit dem ursprünglichen Cluster gibt.
@@ -395,6 +398,7 @@ tridentctl-protect create backuprestore <restore_name> \
 ====
 
 
+[[restore-from-a-snapshot-to-a-different-namespace]]
 == Wiederherstellung aus einem Snapshot in einen anderen Namespace
 
 Sie können Daten aus einem Snapshot mithilfe einer benutzerdefinierten Ressource (CR) entweder in einem anderen Namespace oder im ursprünglichen Quell-Namespace wiederherstellen. Wenn Sie einen Snapshot mithilfe einer SnapshotRestore CR in einem anderen Namespace wiederherstellen, stellt Trident Protect die Anwendung in einem neuen Namespace wieder her und erstellt eine Anwendungs-CR für die wiederhergestellte Anwendung. Um die wiederhergestellte Anwendung zu schützen, erstellen Sie bedarfsgesteuerte Backups oder Snapshots oder legen Sie einen Schutzzeitplan fest.
@@ -526,6 +530,7 @@ tridentctl-protect create snapshotrestore <my_restore_name> \
 ====
 
 
+[[restore-from-a-snapshot-to-the-original-namespace]]
 == Wiederherstellung aus einem Snapshot in den ursprünglichen Namensraum
 
 Sie können einen Snapshot jederzeit im ursprünglichen Namensraum wiederherstellen.
@@ -642,6 +647,7 @@ tridentctl-protect create snapshotinplacerestore <my_restore_name> \
 ====
 
 
+[[check-the-status-of-a-restore-operation]]
 == Überprüfen Sie den Status eines Wiederherstellungsvorgangs
 
 Sie können die Befehlszeile verwenden, um den Status eines Wiederherstellungsvorgangs zu überprüfen, der gerade läuft, abgeschlossen ist oder fehlgeschlagen ist.

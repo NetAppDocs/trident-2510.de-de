@@ -16,6 +16,7 @@ Mit Trident können Sie neue Volumes erstellen, indem Sie vorhandene Volumes ode
 
 
 
+[[prerequisites]]
 == Voraussetzungen
 
 Bevor Sie Volumes klonen, stellen Sie sicher, dass das Quell- und das Ziel-Backend vom gleichen Typ sind und die gleiche Speicherklasse haben.
@@ -25,6 +26,7 @@ NOTE: Das Klonen über Namensräume hinweg wird nur für die  `ontap-san` und  `
 
 
 
+[[quick-start]]
 == Schnellstart
 
 Das Klonen von Volumes lässt sich in wenigen Schritten einrichten.
@@ -47,6 +49,7 @@ Der Eigentümer des Ziel-Namensraums erstellt einen PVC, um den PVC aus dem Quel
 
 
 
+[[configure-the-source-and-destination-namespaces]]
 == Konfigurieren Sie die Quell- und Ziel-Namespaces
 
 Um die Sicherheit zu gewährleisten, erfordert das Klonen von Volumes über Namespaces hinweg die Zusammenarbeit und das Eingreifen des Quell-Namespace-Inhabers, des Cluster-Administrators und des Ziel-Namespace-Inhabers. Die Benutzerrolle wird in jedem Schritt festgelegt.
@@ -121,6 +124,7 @@ spec:
 
 
 
+[[limitations]]
 == Einschränkungen
 
 * Für PVCs, die mit ontap-nas-economy-Treibern bereitgestellt wurden, sind schreibgeschützte Klone nicht unterstützt.

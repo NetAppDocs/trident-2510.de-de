@@ -4,6 +4,7 @@
 
 
 
+[[data-mover-timeout-annotation]]
 == Datenübertragungs-Zeitüberschreitung-Anmerkung
 
 Während Sicherungs- und Wiederherstellungsvorgängen können Sie die Annotation `protect.trident.netapp.io/data-mover-timeout-sec` verwenden, um die Zeitüberschreitung für Datenverschiebungsvorgänge zu konfigurieren. Diese Annotation legt die maximale Zeit in Sekunden fest, die ein Datenverschieber auf den Abschluss eines bestimmten Vorgangs warten soll, bevor eine Zeitüberschreitung eintritt. Sie ist besonders nützlich in Situationen, in denen Netzwerkprobleme oder andere Faktoren dazu führen können, dass Datenverschiebungsvorgänge ins Stocken geraten. Sie hilft, festgefahrene Vorgänge zu erkennen und zu behandeln, anstatt eine allgemeine Zeitüberschreitung für den gesamten Prozess festzulegen. Wenn beispielsweise aufgrund von Netzwerkproblemen beim Wiederherstellen von Volumendaten kein Fortschritt erzielt wird, tritt die Zeitüberschreitung nach der angegebenen Dauer ein.

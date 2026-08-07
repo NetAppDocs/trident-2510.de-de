@@ -16,6 +16,7 @@ Erfahren Sie mehr über die Funktionen, die Trident für die Verwaltung Ihrer Vo
 
 
 
+[[managing-volumes]]
 == Verwaltung von Volumes
 
 Lesen Sie das Folgende, um zu erfahren, wie Sie Ihre Volumes mit Trident verwalten können.

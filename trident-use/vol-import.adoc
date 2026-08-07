@@ -16,6 +16,7 @@ Sie können vorhandene Speichervolumes als Kubernetes PV mit  `tridentctl import
 
 
 
+[[overview-and-considerations]]
 == Überblick und Überlegungen
 
 Sie könnten ein Volume in Trident importieren, um:
@@ -57,6 +58,7 @@ TIP: Diese Optionen sind nützlich, wenn Sie Kubernetes für containerisierte Wo
 
 
 
+[[import-a-volume]]
 == Importieren Sie ein Volume
 
 Sie können ein Volume entweder mit  `tridentctl import` oder durch das Erstellen einer PVC mit Trident-Importanmerkungen importieren.
@@ -152,12 +154,14 @@ Trident wird das Volumen automatisch importieren und es an das PVC binden.
 ====
 
 
+[[examples]]
 == Beispiele
 
 Überprüfen Sie die folgenden Beispiele für den Volumenimport für unterstützte Treiber.
 
 
 
+[[ontap-nas-and-ontap-nas-flexgroup]]
 === ONTAP NAS und ONTAP NAS FlexGroup
 
 Trident unterstützt den Volumenimport mithilfe der  `ontap-nas` und  `ontap-nas-flexgroup` Treiber.
@@ -265,6 +269,7 @@ spec:
 ====
 
 
+[[ontap-san]]
 === ONTAP SAN
 
 Trident unterstützt den Volume-Import mit den  `ontap-san` (iSCSI, NVMe/TCP und FC) und  `ontap-san-economy`-Treibern.
@@ -316,6 +321,7 @@ image:./san-import-igroup.png["Bild von LUNS, die auf iqn und Cluster iqn abgebi
 ====
 
 
+[[element]]
 === Element
 
 Trident unterstützt NetApp Element Software und NetApp HCI Volume-Import mit dem  `solidfire-san` Treiber.
@@ -337,6 +343,7 @@ tridentctl import volume element_default element-managed -f pvc-basic-import.yam
 ----
 
 
+[[azure-netapp-files]]
 === Azure NetApp Files
 
 Trident unterstützt den Volumenimport mithilfe des `azure-netapp-files` Treibers.
@@ -358,6 +365,7 @@ tridentctl import volume azurenetappfiles_40517 importvol1 -f <path-to-pvc-file>
 ----
 
 
+[[google-cloud-netapp-volumes]]
 === Google Cloud NetApp Volumes
 
 Trident unterstützt den Volumenimport mithilfe des  `google-cloud-netapp-volumes` Treibers.

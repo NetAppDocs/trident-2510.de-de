@@ -22,6 +22,7 @@ Durch die Verwendung von Trident mit Amazon FSx für NetApp ONTAP können Sie si
 
 
 
+[[requirements]]
 == Anforderungen
 
 Zusätzlich zu link:../trident-get-started/requirements.html["Trident-Anforderungen"] benötigen Sie zur Integration von FSx for ONTAP mit Trident Folgendes:
@@ -37,6 +38,7 @@ NOTE: Stellen Sie sicher, dass Sie die für Amazon Linux und Ubuntu https://docs
 
 
 
+[[considerations]]
 == Überlegungen
 
 * SMB-Volumes:
@@ -55,6 +57,7 @@ NOTE: Wenn Sie eine IAM-Rolle für Trident angeben, können Sie das explizite An
 
 
 
+[[simultaneous-usage-of-trident-saniscsi-and-ebs-csi-driver]]
 === Gleichzeitige Verwendung von Trident SAN/iSCSI und EBS-CSI-Treiber
 
 Wenn Sie ontap-san-Treiber (z. B. iSCSI) mit AWS (EKS, ROSA, EC2 oder einer anderen Instanz) verwenden möchten, kann die erforderliche Multipath-Konfiguration auf den Knoten mit dem Amazon Elastic Block Store (EBS) CSI-Treiber in Konflikt geraten. Um sicherzustellen, dass Multipathing ohne Beeinträchtigung der EBS-Festplatten auf demselben Knoten funktioniert, müssen Sie EBS in Ihrer Multipathing-Konfiguration ausschließen. Dieses Beispiel zeigt eine `multipath.conf` Datei, die die erforderlichen Trident-Einstellungen enthält und gleichzeitig EBS-Festplatten vom Multipathing ausschließt:
@@ -73,6 +76,7 @@ blacklist {
 ----
 
 
+[[authentication]]
 == Authentifizierung
 
 Trident bietet zwei Modi der Authentifizierung.
@@ -93,6 +97,7 @@ Einzelheiten zur Aktivierung der Authentifizierung finden Sie in der Authentifiz
 
 
 
+[[tested-amazon-machine-images-amis]]
 == Getestete Amazon Machine Images (AMIs)
 
 Der EKS-Cluster unterstützt verschiedene Betriebssysteme, aber AWS hat bestimmte Amazon Machine Images (AMIs) für Container und EKS optimiert. Die folgenden AMIs wurden mit NetApp Trident 25.02 getestet.
@@ -143,6 +148,7 @@ NOTE: Wenn Ihr gewünschtes AMI hier nicht aufgeführt ist, bedeutet das nicht, 
 
 
 
+[[find-more-information]]
 == Weitere Informationen
 
 * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSx for NetApp ONTAP Dokumentation"^]

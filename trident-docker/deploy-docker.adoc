@@ -21,6 +21,7 @@ Siehe die link:prereqs-docker.html["Voraussetzungen für die Bereitstellung"]. N
 
 
 
+[[docker-managed-plugin-method-version-1-1317-03-and-later]]
 == Docker-verwaltete Plugin-Methode (Version 1.13/17.03 und später)
 
 .Bevor Sie beginnen
@@ -121,6 +122,7 @@ docker volume rm firstVolume
 
 
 
+[[traditional-method-version-1-12-or-earlier]]
 == Traditionelle Methode (Version 1.12 oder früher)
 
 .Bevor Sie beginnen
@@ -231,6 +233,7 @@ docker volume rm trident_2
 
 
 
+[[start-trident-at-system-startup]]
 == Trident beim Systemstart starten
 
 Eine Beispiel-Unit-Datei für systemd-basierte Systeme finden Sie  `contrib/trident.service.example` im Git-Repository. Um die Datei unter RHEL zu verwenden, gehen Sie wie folgt vor:

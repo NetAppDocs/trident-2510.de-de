@@ -16,6 +16,7 @@ Der Trident-Operator ermöglicht es Ihnen, die Trident-Installation mithilfe der
 
 
 
+[[understanding-controller-pods-and-node-pods]]
 == Controller-Pods und Node-Pods verstehen
 
 Trident läuft als einzelner Controller-Pod und als Node-Pod auf jedem Worker-Knoten im Cluster. Der Node-Pod muss auf jedem Host ausgeführt werden, auf dem Sie potenziell ein Trident-Volume einbinden möchten.
@@ -28,6 +29,7 @@ Kubernetes link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-p
 
 
 
+[[configuration-options]]
 == Konfigurationsoptionen
 
 
@@ -263,6 +265,7 @@ NOTE: Weitere Informationen zur Formatierung von Pod-Parametern finden Sie unter
 
 
 
+[[sample-configurations]]
 == Beispielkonfigurationen
 
 Sie können die Attribute in <<Konfigurationsoptionen>> verwenden, wenn Sie  `TridentOrchestrator` definieren, um Ihre Installation anzupassen.

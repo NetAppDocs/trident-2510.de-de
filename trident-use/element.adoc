@@ -16,6 +16,7 @@ Erfahren Sie, wie Sie ein Element-Backend mit Ihrer Trident-Installation erstell
 
 
 
+[[element-driver-details]]
 == Element-Treiberdetails
 
 Trident stellt den  `solidfire-san` Storage-Treiber zur Kommunikation mit dem Cluster bereit. Unterstützte Zugriffsmodi sind: _ReadWriteOnce_ (RWO), _ReadOnlyMany_ (ROX), _ReadWriteMany_ (RWX), _ReadWriteOncePod_ (RWOP).
@@ -50,6 +51,7 @@ RWO, RWOP
 |===
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie benötigen Folgendes, bevor Sie ein Element-Backend erstellen.
@@ -61,6 +63,7 @@ Sie benötigen Folgendes, bevor Sie ein Element-Backend erstellen.
 
 
 
+[[backend-configuration-options]]
 == Backend-Konfigurationsoptionen
 
 Siehe die folgende Tabelle für die Backend-Konfigurationsoptionen:
@@ -113,6 +116,7 @@ WARNING: Verwenden Sie  `debugTraceFlags` nicht, es sei denn, Sie führen eine F
 
 
 
+[[example-1-backend-configuration-for-solidfire-san-driver-with-three-volume-types]]
 == Beispiel 1: Backend-Konfiguration für `solidfire-san` Treiber mit drei Volumentypen
 
 Dieses Beispiel zeigt eine Backend-Datei mit CHAP-Authentifizierung und Modellierung von drei Volumentypen mit spezifischen QoS-Garantien. Wahrscheinlich würden Sie anschließend Speicherklassen definieren, um jede dieser mithilfe des  `IOPS` storage class-Parameters zu nutzen.
@@ -148,6 +152,7 @@ Types:
 ----
 
 
+[[example-2-backend-and-storage-class-configuration-for-solidfire-san-driver-with-virtual-pools]]
 == Beispiel 2: Backend- und Speicherklassenkonfiguration für  `solidfire-san`-Treiber mit virtuellen Pools
 
 Dieses Beispiel zeigt die Backend-Definitionsdatei, die mit virtuellen Pools konfiguriert ist, zusammen mit StorageClasses, die auf sie verweisen.
@@ -266,6 +271,7 @@ parameters:
 ----
 
 
+[[find-more-information]]
 == Weitere Informationen
 
 * link:../trident-concepts/vol-access-groups.html["Volumenzugriffsgruppen"^]

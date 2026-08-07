@@ -16,6 +16,7 @@ Sie können jetzt Google Cloud NetApp Volumes als Backend für Trident konfiguri
 
 
 
+[[google-cloud-netapp-volumes-driver-details]]
 == Google Cloud NetApp Volumes-Treiberdetails
 
 Trident stellt den  `google-cloud-netapp-volumes` Treiber für die Kommunikation mit dem Cluster bereit. Unterstützte Zugriffsmodi sind: _ReadWriteOnce_ (RWO), _ReadOnlyMany_ (ROX), _ReadWriteMany_ (RWX), _ReadWriteOncePod_ (RWOP).
@@ -37,6 +38,7 @@ RWO, ROX, RWX, RWOP
 |===
 
 
+[[cloud-identity-for-gke]]
 == Cloud identity für GKE
 
 Cloud identity ermöglicht es Kubernetes-Pods, auf Google Cloud-Ressourcen zuzugreifen, indem sie sich als Workload-Identität authentifizieren, anstatt explizite Google Cloud-Anmeldeinformationen anzugeben.

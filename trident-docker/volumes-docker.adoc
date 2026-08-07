@@ -16,6 +16,7 @@ Sie können Volumes einfach erstellen, klonen und entfernen, indem Sie die Stand
 
 
 
+[[create-a-volume]]
 == Erstellen Sie ein Volumen
 
 * Erstellen Sie ein Volume mit einem Treiber unter Verwendung des Standardnamens:
@@ -48,6 +49,7 @@ TIP: Die Volume-Größen werden als Zeichenfolgen angegeben, die einen ganzzahli
 
 
 
+[[remove-a-volume]]
 == Ein Volume entfernen
 
 * Entfernen Sie das Volume genau wie jedes andere Docker-Volume:
@@ -66,6 +68,7 @@ Führen Sie die folgenden Schritte aus, um Trident für Docker zu aktualisieren.
 
 
 
+[[clone-a-volume]]
 == Ein Volume klonen
 
 Bei Verwendung der `ontap-nas`, `ontap-san` und `solidfire-san` Speichertreiber kann Trident Volumes klonen. Bei Verwendung der `ontap-nas-flexgroup` oder `ontap-nas-economy` Treiber wird das Klonen nicht unterstützt. Das Erstellen eines neuen Volumes aus einem vorhandenen Volume führt zur Erstellung eines neuen Snapshots.
@@ -92,6 +95,7 @@ docker volume create -d <driver_name> --name <new_name> -o from=<source_docker_v
 
 
 
+[[example]]
 === Beispiel
 
 [source, console]
@@ -128,6 +132,7 @@ docker volume rm volFromSnap
 ----
 
 
+[[access-externally-created-volumes]]
 == Extern erstellte Volumes zugreifen
 
 Auf extern erstellte Blockgeräte (oder deren Klone) können Container mit Trident *nur* zugreifen, wenn diese keine Partitionen haben und ihr Dateisystem von Trident unterstützt wird (zum Beispiel: ein `ext4`-formatiertes `/dev/sdc1` wird nicht über Trident zugänglich sein).

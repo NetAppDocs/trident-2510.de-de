@@ -16,6 +16,7 @@ Hier finden Sie Informationen zu bekannten Problemen und Einschränkungen bei de
 
 
 
+[[upgrading-trident-docker-volume-plugin-to-20-10-and-later-from-older-versions-results-in-upgrade-failure-with-the-no-such-file-or-directory-error]]
 == Das Upgrade des Trident Docker Volume Plugin auf 20.10 und höher von älteren Versionen führt zu einem Upgrade-Fehler mit der Fehlermeldung no such file or directory.
 
 .Problemumgehung
@@ -41,6 +42,7 @@ docker plugin install netapp/trident-plugin:20.10 --alias netapp --grant-all-per
 
 
 
+[[volume-names-must-be-a-minimum-of-2-characters-in-length]]
 == Volume-Namen müssen mindestens 2 Zeichen lang sein.
 
 
@@ -48,6 +50,7 @@ NOTE: Dies ist eine Einschränkung des Docker-Clients. Der Client interpretiert 
 
 
 
+[[docker-swarm-has-certain-behaviors-that-prevent-trident-from-supporting-it-with-every-storage-and-driver-combination]]
 == Docker Swarm weist bestimmte Verhaltensweisen auf, die Trident daran hindern, es mit jeder Speicher- und Treiberkombination zu unterstützen.
 
 * Docker Swarm verwendet derzeit den Volumennamen anstelle der Volume-ID als eindeutigen Volume-Bezeichner.
@@ -61,4 +64,5 @@ NetApp has dem Docker-Team Feedback gegeben, aber es gibt keine Hinweise auf zuk
 
 
 
+[[if-a-flexgroup-is-being-provisioned-ontap-does-not-provision-a-second-flexgroup-if-the-second-flexgroup-has-one-or-more-aggregates-in-common-with-the-flexgroup-being-provisioned]]
 == Wenn ein FlexGroup bereitgestellt wird, stellt ONTAP kein zweites FlexGroup bereit, wenn das zweite FlexGroup ein oder mehrere Aggregate mit dem FlexGroup, das bereitgestellt wird, gemeinsam hat.

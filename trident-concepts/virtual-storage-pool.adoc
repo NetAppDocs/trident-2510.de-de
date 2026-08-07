@@ -16,6 +16,7 @@ Virtuelle Pools bieten eine Abstraktionsschicht zwischen Trident-Speicher-Backen
 
 
 
+[[learn-about-virtual-pools]]
 == Erfahren Sie mehr über virtuelle Pools
 
 Der Speicheradministrator kann virtuelle Pools auf jedem der Trident Backends in einer JSON- oder YAML-Definitionsdatei definieren.

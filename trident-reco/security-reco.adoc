@@ -16,6 +16,7 @@ Verwenden Sie die hier aufgeführten Empfehlungen, um sicherzustellen, dass Ihre
 
 
 
+[[run-trident-in-its-own-namespace]]
 == Trident in einem eigenen Namensraum ausführen
 
 Es ist wichtig, Anwendungen, Anwendungsadministratoren, Benutzern und Verwaltungsanwendungen den Zugriff auf Trident-Objektdefinitionen oder die Pods zu verwehren, um eine zuverlässige Speicherung zu gewährleisten und potenziell schädliche Aktivitäten zu verhindern.
@@ -24,6 +25,7 @@ Um andere Anwendungen und Benutzer von Trident zu trennen, installieren Sie Trid
 
 
 
+[[use-chap-authentication-with-ontap-san-backends]]
 == CHAP Authentifizierung mit ONTAP SAN-Backends verwenden
 
 Trident unterstützt CHAP-basierte Authentifizierung für ONTAP SAN-Workloads (unter Verwendung der  `ontap-san` und  `ontap-san-economy` Treiber). NetApp empfiehlt die Verwendung von bidirektionalem CHAP mit Trident für die Authentifizierung zwischen einem Host und dem Storage-Backend.
@@ -32,6 +34,7 @@ Für ONTAP-Backends, die die SAN-Speichertreiber verwenden, kann Trident bidirek
 
 
 
+[[use-chap-authentication-with-netapp-hci-and-solidfire-backends]]
 == Verwenden Sie die CHAP-Authentifizierung mit NetApp HCI und SolidFire Backends
 
 NetApp empfiehlt die Bereitstellung von bidirektionalem CHAP, um die Authentifizierung zwischen einem Host und den NetApp HCI- und SolidFire-Backends sicherzustellen. Trident verwendet ein Secret-Objekt, das zwei CHAP-Passwörter pro Mandant enthält. Wenn Trident installiert ist, verwaltet es die CHAP-Secrets und speichert sie in einem `tridentvolume` CR-Objekt für das jeweilige PV. Wenn Sie ein PV erstellen, verwendet Trident die CHAP-Secrets, um eine iSCSI-Sitzung zu initiieren und über CHAP mit dem NetApp HCI- und SolidFire-System zu kommunizieren.
@@ -41,6 +44,7 @@ NOTE: Die Volumes, die von Trident erstellt werden, sind keiner Volume-Zugriffsg
 
 
 
+[[use-trident-with-nve-and-nae]]
 == Verwenden Sie Trident mit NVE und NAE
 
 NetApp ONTAP bietet Verschlüsselung ruhender Daten, um sensible Daten im Falle von Diebstahl, Rückgabe oder anderweitiger Verwendung einer Festplatte zu schützen. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Konfigurieren Sie die Übersicht zur NetApp Volume Encryption"^].
